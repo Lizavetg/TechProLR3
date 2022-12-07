@@ -14,10 +14,6 @@
 1. Разработка программы: 
   а) в часть программы, представленной в методичке, были добавленны конструктор и деструктор. В конструкторе происходит засекание времени, в то время, как в деструкторе высчитывается конечное время, а после выводится в консоль время существования класса. 
   
-  `profiler() {`
-        `steady_clock::time_point start_time_ = steady_clock::now();`
-        `this->start_t_ = start_time_;`
-    `};`
     `~profiler() {`
         `steady_clock::time_point end_time_ = steady_clock::now();`
         `cout << "Duration of block" << endl;`
