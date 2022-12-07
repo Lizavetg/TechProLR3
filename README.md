@@ -18,7 +18,6 @@
         `steady_clock::time_point start_time_ = steady_clock::now();`
         `this->start_t_ = start_time_;`
     `};`
-
     `~profiler() {`
         `steady_clock::time_point end_time_ = steady_clock::now();`
         `cout << "Duration of block" << endl;`
