@@ -14,21 +14,21 @@
 1. Разработка программы: 
   а) в часть программы, представленной в методичке таким образом:
   
-    `#include <chrono>
-    #include <iostream>
-    #include <thread>
-  
-    using namespace std;
-    using namespace chrono;
-    using namespace literals;
-  
-    int main() {
-      cout << "Ожидание 5 сек..."s << endl;
-      Profiler sleep_guard;
-      this_thread::sleep_for(5s);
-      cout << "Ожидание завершено"s << endl;
-    }`
-    
+`#include <chrono>
+#include <iostream>
+#include <thread>
+
+using namespace std;
+using namespace chrono;
+using namespace literals;
+
+int main() {
+cout << "Ожидание 5 сек..."s << endl;
+Profiler sleep_guard;
+this_thread::sleep_for(5s);
+cout << "Ожидание завершено"s << endl;
+}`
+
     
     
     
