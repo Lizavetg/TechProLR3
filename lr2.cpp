@@ -34,14 +34,17 @@ class complex_navigation_system {
 
         void add_sensor(sensors Q,int i)
         {
+            profiler sleep_guard;
+    
+   
             B.push_back(Q);
             cout << "name  ";
             cin>> B[i].name;
 
             if (B[i].name == "acc") {
                 B[i].measurement_unit=" m/s^2 ";
-                B[i].measurement_range.min=4;
-                B[i].measurement_range.max=6;
+                B[i].measurement_range.min=1;
+                B[i].measurement_range.max=3;
                 cout << " acc ";
             }
 
@@ -53,20 +56,21 @@ class complex_navigation_system {
 
             if (B[i].name == "pos") {
                 B[i].measurement_unit = " m ";
-                B[i].measurement_range.min =1;
-                B[i].measurement_range.max = 3;
+                B[i].measurement_range.min =14;
+                B[i].measurement_range.max = 16;
             }
             B[i].m = B[i].measure();
             cout << B[i].m;
 
 
-cout<<" ADD";
-prof();
-      
+           cout<<" ADD";
+         
+         this_thread::sleep_for(5s);
         };
   
         vector <float>   measure_acc( )
         {
+            profiler sleep_guard2;
             vector <float> acc;
             for (int i = 0; i < B.size(); i++) {
                 if (B[i].name == "acc")
@@ -78,15 +82,16 @@ prof();
             for (int i = 0; i < acc.size(); i++) {
                 cout << acc[i]<<" ";        
             }
-    cout<<"ACC ";
-            prof();
-    
+           cout<<"ACC ";
+ 
+            this_thread::sleep_for(5s);
             return acc;
 
         };
    
         vector <float> measure_gyro()
         {
+            profiler sleep_guard3;
            vector <float> gyro;
      
            for (int i = 0; i < B.size(); i++) {
@@ -101,14 +106,15 @@ prof();
            }
            cout<<"GYRO  ";
 
-               prof();
-
+  
+            this_thread::sleep_for(5s);
            return gyro;
 
         };
 
         vector <float> measure_position() {
-           vector <float> pos;
+             profiler sleep_guard4;
+             vector <float> pos;
        
             for (int i = 0; i < B.size(); i++) {
                 if (B[i].name == "pos")
@@ -120,8 +126,9 @@ prof();
             for (int i = 0; i < pos.size(); i++) {
                 cout << pos[i] << " ";
             }
-cout<<"POS";
-             prof();
+             cout<<"POS";
+          
+              this_thread::sleep_for(5s);
             return pos;
 
         };
@@ -130,35 +137,30 @@ cout<<"POS";
    
         void list_sensors()
         {
+             profiler sleep_guard5;
             for (int i = 0; i < B.size(); i++) {
                 cout << B[i].name << " ";
             }
             cout << endl;
             cout<< "list";
-            prof();
+            this_thread::sleep_for(5s);
+         
         };
 
         void list_sensors_info()
         {
+             profiler sleep_guard6;
             for (int i = 0; i < B.size(); i++) {
                 cout << B[i].measure() << " min " << B[i].measurement_range.min << " max "<< B[i].measurement_range.max <<"  "<< B[i].measurement_unit;
             }
             cout << endl;
             cout<<"list info ";
-            prof();
+            this_thread::sleep_for(5s);
+         
         };
     
 
-        void prof(){
-            cout<<endl;
-           
-               profiler sleep_guard;
     
-                 this_thread::sleep_for(5s);
-                 //cout << "  Ожидание завершено"s << endl;
-
-      }
-   
   
  
 };
@@ -187,6 +189,6 @@ int main()
     cout << " pos ";
     A.measure_position();
 cout << endl;
- 
+ A.list_sensors_info();
 
 }
