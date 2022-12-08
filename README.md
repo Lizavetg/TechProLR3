@@ -24,7 +24,7 @@
     Makefile — это файл с инструкциями для утилиты make, которая нужна для автоматической сборки проекта.  
     Пример содержания Makefile:  
       `all:`  
-	      `g++ -Wall -Werror techprol.cpp -o techprol  `,
+	      `g++ -Wall -Werror LR3.cpp -o LR3  `,
     где all-это цель,после которой указаны нужные команды, с использование табуляции.  
     Для того, чтобы запустить Makefile была использована команда make -f nameMakefile, где nameMakefile-имя файла.  
     
