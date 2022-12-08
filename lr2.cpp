@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 #include <vector> 
-#include "D:\TechProLR3\LR3.cpp"
+#include "D:\TechProLR3-1\LR3.cpp"
 using namespace std;
 
 class range {
