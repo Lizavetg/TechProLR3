@@ -23,10 +23,3 @@ public:
     }
 };
 
-int main() {
-    setlocale(LC_ALL, "Russian");
-    cout << "Waiting for 5 seconds..."s << endl;
-    profiler sleep_guard;
-    this_thread::sleep_for(5s);
-    cout << "Wait is over"s << endl;
-}
