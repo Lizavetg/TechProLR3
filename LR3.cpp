@@ -18,7 +18,7 @@ public:
 
     ~profiler() {
         steady_clock::time_point end_time_ = steady_clock::now();
-        cout << "Duration of block" << endl;
+        // cout << "Duration of block" << endl;
         cout << duration_cast<milliseconds>(end_time_ - start_t_).count() << "ms\n";
     }
 };
